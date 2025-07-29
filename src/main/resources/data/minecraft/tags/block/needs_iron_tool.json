@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "redenit-mod:deepslate_redenit_ore",
+    "redenit-mod:redenit_ore",
+    "redenit-mod:redenit_block",
+    "redenit-mod:redenit_waste_block"
+  ]
+}

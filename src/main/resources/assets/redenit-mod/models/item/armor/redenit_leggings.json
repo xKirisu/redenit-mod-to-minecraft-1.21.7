@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "redenit-mod:item/armor/redenit_leggings"
+  }
+}

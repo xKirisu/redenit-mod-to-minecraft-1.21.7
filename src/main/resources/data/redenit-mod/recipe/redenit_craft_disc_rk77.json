@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " d ",
+    "drd",
+    " d "
+  ],
+  "key": {
+    "d": "redenit-mod:disc_shard",
+    "r": "redenit-mod:redenit_ingot"
+  },
+  "result": {
+    "id": "redenit-mod:disc_rk77",
+    "count": 1
+  }
+}

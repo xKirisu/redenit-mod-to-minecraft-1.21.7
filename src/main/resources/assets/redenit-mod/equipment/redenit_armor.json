@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "redenit-mod:redenit_armor_1"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "redenit-mod:redenit_armor_2"
+      }
+    ]
+  }
+}

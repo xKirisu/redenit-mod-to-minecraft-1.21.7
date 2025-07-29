@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "redenit-mod:redenit_waste"
+  },
+  "result": {
+    "item": "redenit-mod:redenit_nugget"
+  },
+  "experience": 4.5,
+  "cookingtime": 400
+}

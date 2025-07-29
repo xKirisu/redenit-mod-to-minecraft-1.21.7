@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  r",
+    " rs",
+    "r s"
+  ],
+  "key": {
+    "r": "redenit-mod:redenit_ingot",
+    "s": "minecraft:string"
+  },
+  "result": {
+    "id": "redenit-mod:redenit_rod",
+    "count": 1
+  }
+}

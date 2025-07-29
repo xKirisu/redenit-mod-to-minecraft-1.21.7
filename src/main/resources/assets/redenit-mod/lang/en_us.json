@@ -1,0 +1,32 @@
+{
+  "item.redenit-mod.redenit_waste":         "Redenit Waste",
+  "item.redenit-mod.redenit_nugget":        "Redenit Nugget",
+  "item.redenit-mod.redenit_ingot":         "Redenit Ingot",
+
+  "item.redenit-mod.redenit_ore":           "Redenit Ore",
+  "item.redenit-mod.deepslate_redenit_ore": "Deepslate Redenit Ore",
+  "item.redenit-mod.redenit_block":         "Redenit Block",
+  "item.redenit-mod.redenit_waste_block":   "Redenit Waste Block",
+
+  "item.redenit-mod.redenit_helmet":        "Redenit Helmet",
+  "item.redenit-mod.redenit_chestplate":    "Redenit Chestplate",
+  "item.redenit-mod.redenit_leggings":      "Redenit Leggings",
+  "item.redenit-mod.redenit_boots":         "Redenit Boots",
+
+  "item.redenit-mod.redenit_sword":         "Redenit Sword",
+  "item.redenit-mod.redenit_axe":         "Redenit Axe",
+  "item.redenit-mod.redenit_pickaxe":         "Redenit Pickaxe",
+  "item.redenit-mod.redenit_shovel":         "Redenit Shovel",
+  "item.redenit-mod.redenit_hoe":         "Redenit Hoe",
+
+  "item.redenit-mod.redenit_rod":         "Redenit Rod",
+
+  "item.redenit-mod.redelon_seeds":         "Redelon Seeds",
+  "item.redenit-mod.redelon_slice":         "Redelon Slice",
+  "item.redenit-mod.redelon_block":         "Redelon",
+
+  "item.redenit-mod.disc_rk77":             "Music Disc",
+  "item.redenit-mod.disc_shard":         "Disc Shard",
+
+  "itemGroup.redenit_group": "Redenit Mod Items"
+}

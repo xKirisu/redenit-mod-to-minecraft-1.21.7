@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rrr",
+    "r r"
+  ],
+  "key": {
+    "r": "redenit-mod:redenit_ingot"
+  },
+  "result": {
+    "id": "redenit-mod:redenit_helmet",
+    "count": 1
+  }
+}

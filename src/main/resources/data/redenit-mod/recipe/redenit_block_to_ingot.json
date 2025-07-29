@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "b"
+  ],
+  "key": {
+    "b": "redenit-mod:redenit_block"
+  },
+  "result": {
+    "id": "redenit-mod:redenit_ingot",
+    "count": 9
+  }
+}

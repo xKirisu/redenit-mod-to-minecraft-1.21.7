@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "redenit-mod:block/redelon_block_top",
+    "side": "redenit-mod:block/redelon_block"
+  }
+}

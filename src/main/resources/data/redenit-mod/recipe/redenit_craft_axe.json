@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rr",
+    "r/",
+    " /"
+  ],
+  "key": {
+    "r": "redenit-mod:redenit_ingot",
+    "/": "minecraft:stick"
+  },
+  "result": {
+    "id": "redenit-mod:redenit_axe",
+    "count": 1
+  }
+}

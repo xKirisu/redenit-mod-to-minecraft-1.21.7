@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "redenit-mod:block/redenit_waste_block"
+  }
+}
