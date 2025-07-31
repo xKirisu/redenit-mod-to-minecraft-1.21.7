@@ -28,5 +28,8 @@
   "item.redenit-mod.disc_rk77":             "Music Disc",
   "item.redenit-mod.disc_shard":         "Disc Shard",
 
+  "item.redenit-mod.ash_log_block":         "Ash Log",
+  "item.redenit-mod.ash_plank_block":       "Ash Plank",
+
   "itemGroup.redenit_group": "Redenit Mod Items"
 }

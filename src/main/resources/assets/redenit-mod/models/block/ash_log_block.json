@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "redenit-mod:block/ash_log_top_block",
+    "side": "redenit-mod:block/ash_log_block"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "redenit-mod:block/ash_log_horizontal_block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "redenit-mod:block/ash_log_block"
+    },
+    "axis=z": {
+      "model": "redenit-mod:block/ash_log_horizontal_block",
+      "x": 90
+    }
+  }
+}

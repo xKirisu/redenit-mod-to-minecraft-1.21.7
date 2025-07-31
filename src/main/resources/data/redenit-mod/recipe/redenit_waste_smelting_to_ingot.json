@@ -1,11 +1,7 @@
 {
   "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "redenit-mod:redenit_waste"
-  },
-  "result": {
-    "item": "redenit-mod:redenit_nugget"
-  },
+  "ingredient": "redenit-mod:redenit_waste",
+  "result": "redenit-mod:redenit_nugget",
   "experience": 5.5,
   "cookingtime": 700
 }

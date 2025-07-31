@@ -2,11 +2,10 @@ package redenit.modid;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.StemBlock;
+import net.minecraft.block.*;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.jukebox.JukeboxSongs;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.component.type.ConsumableComponent;
 import net.minecraft.component.type.ConsumableComponents;
 import net.minecraft.component.type.FoodComponent;
@@ -22,10 +21,13 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import redenit.modid.class_extensions.RedenitRod;
 
 import javax.tools.Tool;
 import java.util.Map;
@@ -57,47 +59,70 @@ public class RedenitItemCollection {
     public static final Block REDELON_BLOCK = ToolsToMod.register(
             "redelon_block",
             Block::new,
-            AbstractBlock.Settings.create(),
+            AbstractBlock.Settings
+                    .create()
+                    .strength(3.0f, 1.0f)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .pistonBehavior(PistonBehavior.DESTROY),
             true
     );
-
-    //public static final Block REDENIT_STEM = ToolsToMod.register(
-    //        "redelon_stem",
-    //        new StemBlock(
-    //                ToolsToMod.DICT_ITEM_KEYS.get("redelon_block"),
-     //               key,
-    //                ToolsToMod.DICT_ITEM_KEYS.get("redelon_seeds"),
-     //               new FabricBlockSettings.copyOf(Blocks.MELON_STEM)
-    //        ),
-    //        new Item.Settings()
-    //);
 
     // Blocks
     public static final Block REDENIT_ORE = ToolsToMod.register(
             "redenit_ore",
             Block::new,
-            AbstractBlock.Settings.create().requiresTool(),
+            AbstractBlock.Settings
+                    .create()
+                    .requiresTool()
+                    .strength(4.5F, 4.0F),
             true
     );
 
     public static final Block DEEPSLATE_REDENIT_ORE = ToolsToMod.register(
             "deepslate_redenit_ore",
             Block::new,
-            AbstractBlock.Settings.create().requiresTool(),
+            AbstractBlock.Settings
+                    .create()
+                    .requiresTool()
+                    .strength(5.5F, 5.0F),
             true
     );
 
     public static final Block REDENIT_BLOCK = ToolsToMod.register(
             "redenit_block",
             Block::new,
-            AbstractBlock.Settings.create().requiresTool(),
+            AbstractBlock.Settings.create()
+                    .requiresTool()
+                    .strength(7.0F, 9.0F)
+                    .sounds(BlockSoundGroup.METAL)
+                    .instrument(NoteBlockInstrument.GUITAR)
+                    .mapColor(DyeColor.RED),
             true
     );
 
     public static final Block REDENIT_WASTE_BLOCK = ToolsToMod.register(
             "redenit_waste_block",
             Block::new,
-            AbstractBlock.Settings.create().requiresTool(),
+            AbstractBlock.Settings.create()
+                    .requiresTool()
+                    .strength(5.5F, 7.0F)
+                    .instrument(NoteBlockInstrument.BIT)
+                    .mapColor(DyeColor.RED),
+            true
+    );
+
+    public static final Block ASH_LOG_BLOCK = ToolsToMod.register(
+            "ash_log_block",
+            PillarBlock::new,
+            //createLogSettings(MapColor.OAK_TAN, MapColor.SPRUCE_BROWN, BlockSoundGroup.WOOD)
+            AbstractBlock.Settings.create(),
+            true
+            );
+
+    public static final Block ASH_PLANK_BLOCK = ToolsToMod.register(
+      "ash_plank_block",
+        Block::new,
+        AbstractBlock.Settings.create()    ,
             true
     );
 
@@ -106,6 +131,9 @@ public class RedenitItemCollection {
     public static final RegistryKey<EquipmentAsset> REDENIT_ARMOR_MATERIAL_KEY = RegistryKey.of(EquipmentAssetKeys.REGISTRY_KEY, Identifier.of(RedenitMod.MOD_ID, "redenit_armor"));
 
     public static final TagKey<Item> REDENIT_INGREDIENT = TagKey.of(RegistryKeys.ITEM, Identifier.of(RedenitMod.MOD_ID, "redenit_ingredient"));
+
+    private static final int[] BASE_ARMOR_DURABILITY = {12, 14, 15, 10};
+    private static final int[] BASE_ARMOR_PROTECTION = {4, 7, 5, 2};
 
     public static final ArmorMaterial REDENIT_ARMOR_MATERIAL = new ArmorMaterial(
             100,
@@ -169,31 +197,42 @@ public class RedenitItemCollection {
     public static final Item REDENIT_HELMET = ToolsToMod.register(
       "redenit_helmet",
             Item::new,
-            new Item.Settings().armor(REDENIT_ARMOR_MATERIAL, EquipmentType.HELMET).maxDamage(EquipmentType.HELMET.getMaxDamage(1))
+            new Item.Settings()
+                    .armor(REDENIT_ARMOR_MATERIAL, EquipmentType.HELMET)
+                    .maxDamage(EquipmentType.HELMET.getMaxDamage(1))
+
     );
 
     public static final Item REDENIT_CHESTPLATE = ToolsToMod.register(
             "redenit_chestplate",
             Item::new,
-            new Item.Settings().armor(REDENIT_ARMOR_MATERIAL, EquipmentType.CHESTPLATE).maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(1))
+            new Item.Settings()
+                    .armor(REDENIT_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)
+                    .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(1))
     );
 
     public static final Item REDENIT_LEGGINGS = ToolsToMod.register(
             "redenit_leggings",
             Item::new,
-            new Item.Settings().armor(REDENIT_ARMOR_MATERIAL, EquipmentType.LEGGINGS).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(1))
+            new Item.Settings()
+                    .armor(REDENIT_ARMOR_MATERIAL, EquipmentType.LEGGINGS)
+                    .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(1))
     );
 
     public static final Item REDENIT_BOOTS = ToolsToMod.register(
             "redenit_boots",
             Item::new,
-            new Item.Settings().armor(REDENIT_ARMOR_MATERIAL, EquipmentType.BOOTS).maxDamage(EquipmentType.BOOTS.getMaxDamage(1))
+            new Item.Settings()
+                    .armor(REDENIT_ARMOR_MATERIAL, EquipmentType.BOOTS)
+                    .maxDamage(EquipmentType.BOOTS.getMaxDamage(1))
     );
 
     public static final Item REDENIT_ROD = ToolsToMod.register(
       "redenit_rod",
-            FishingRodItem::new,
-            (new Item.Settings()).maxDamage(64).enchantable(1)
+            RedenitRod::new,
+            (new Item.Settings())
+                    .maxDamage(64)
+                    .enchantable(4)
     );
 
 
@@ -236,6 +275,9 @@ public class RedenitItemCollection {
 
                         entries.add(DISC_SHARD);
                         entries.add(DISC_RK77);
+
+                        entries.add(ASH_LOG_BLOCK);
+                        entries.add(ASH_PLANK_BLOCK);
 
                         // ...
                     })
